@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bakelicious by Hafsah — Custom Cakes & Breads Bandung</title>
+<meta name="description" content="Custom cakes, birthday cakes, artisan breads & pastries handcrafted with love in Bandung. Order via WhatsApp, Instagram, atau TikTok @bakeliciousbyhafsah">
+<meta name="keywords" content="kue ulang tahun bandung, custom cake bandung, artisan bread bandung, bakelicious hafsah">
+<meta property="og:title" content="Bakelicious by Hafsah — Custom Cakes & Breads Bandung">
+<meta property="og:description" content="Handcrafted cakes, breads & pastries in Bandung. Made to order with love.">
+<meta property="og:url" content="https://bakeliciousbyhafsah.com">
+
+<!-- Fonts: Cormorant Garamond (editorial serif) + Jost (clean modern) + Satisfy (script accent) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&family=Satisfy&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================
+   RESET & BASE
+========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+:root {
+  --cream:       #FBF6EE;
+  --cream-dark:  #F3EBD8;
+  --wheat:       #E8CFA0;
+  --caramel:     #C8872A;
+  --caramel-dk:  #9E6518;
+  --espresso:    #2E1A0E;
+  --espresso-lt: #5C3820;
+  --rust:        #B84C2B;
+  --rust-lt:     #D4795A;
+  --warm-white:  #FFFDF8;
+  --text:        #2E1A0E;
+  --text-mid:    #7A4E30;
+  --text-soft:   #A07050;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-script:  'Satisfy', cursive;
+  --font-body:    'Jost', sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* =========================================
+   GRAIN TEXTURE OVERLAY
+========================================= */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 3rem;
+  background: rgba(251,246,238,0.9);
+  backdrop-filter: blur(16px) saturate(1.5);
+  border-bottom: 1px solid rgba(200,135,42,0.15);
+  transition: padding 0.3s var(--ease-out), box-shadow 0.3s;
+}
+nav.scrolled {
+  padding: 0.75rem 3rem;
+  box-shadow: 0 4px 30px rgba(46,26,14,0.08);
+}
+
+.nav-brand {
+  display: flex; flex-direction: column; line-height: 1;
+}
+.nav-brand-main {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--espresso);
+}
+.nav-brand-sub {
+  font-family: var(--font-script);
+  font-size: 0.9rem;
+  color: var(--caramel);
+  margin-top: -2px;
+}
+
+.nav-links {
+  display: flex; align-items: center; gap: 2.5rem; list-style: none;
+}
+.nav-links a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 1px; background: var(--caramel);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--caramel); }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-order {
+  background: var(--espresso) !important;
+  color: var(--cream) !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.08em;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-order::after { display: none !important; }
+.nav-order:hover {
+  background: var(--caramel) !important;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left: text */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 5rem 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+.hero-eyebrow-line {
+  width: 32px; height: 1px; background: var(--caramel);
+}
+.hero-eyebrow-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--caramel);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 5.5vw, 6rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--espresso);
+  margin-bottom: 0.25rem;
+}
+.hero-title em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--rust);
+}
+.hero-title-script {
+  font-family: var(--font-script);
+  font-size: clamp(2.8rem, 4.5vw, 5rem);
+  color: var(--caramel);
+  display: block;
+  margin: 0.1em 0 0.15em;
+  line-height: 1.1;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-mid);
+  max-width: 380px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex; gap: 1rem; align-items: center;
+}
+
+.btn-primary {
+  background: var(--rust);
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+  background: var(--espresso);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(46,26,14,0.2);
+}
+.btn-primary svg { width: 16px; height: 16px; transition: transform 0.2s; }
+.btn-primary:hover svg { transform: translateX(3px); }
+
+.btn-ghost {
+  color: var(--text-mid);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: var(--caramel); border-color: var(--caramel); }
+
+.hero-stats {
+  display: flex; gap: 2.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200,135,42,0.2);
+}
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--espresso);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-top: 0.3rem;
+}
+
+/* Right: visual collage */
+.hero-right {
+  position: relative;
+  background: var(--cream-dark);
+  overflow: hidden;
+}
+
+.hero-bg-pattern {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 30% 50%, rgba(200,135,42,0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(184,76,43,0.06) 0%, transparent 50%);
+}
+
+/* Big decorative wheat/bread emoji art */
+.hero-visual-grid {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  padding: 6rem 2rem 2rem;
+}
+
+.hero-tile {
+  border-radius: var(--radius-md);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out);
+}
+.hero-tile:hover { transform: scale(1.02); }
+
+.hero-tile-1 {
+  background: linear-gradient(135deg, #E8CFA0 0%, #D4A96A 100%);
+  grid-row: span 2;
+}
+.hero-tile-2 { background: linear-gradient(135deg, #F5E6D0 0%, #EDD4A8 100%); }
+.hero-tile-3 { background: linear-gradient(135deg, #F8EEE0 0%, #EDD9B8 100%); }
+
+.tile-emoji {
+  font-size: 4.5rem;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.12));
+  margin-bottom: 0.5rem;
+}
+.hero-tile-1 .tile-emoji { font-size: 6rem; }
+
+.tile-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--espresso-lt);
+  opacity: 0.7;
+}
+
+/* =========================================
+   SECTION COMMON
+========================================= */
+section { padding: 7rem 3rem; }
+
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.section-eyebrow-line { width: 28px; height: 1px; background: var(--caramel); }
+.section-eyebrow-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--caramel);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--espresso);
+  margin-bottom: 1.25rem;
+}
+.section-title em { font-style: italic; font-weight: 600; color: var(--rust); }
+.section-title .script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--caramel);
+}
+
+.section-desc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-mid);
+  max-width: 480px;
+}
+
+/* =========================================
+   ABOUT / SIGNATURE STRIP
+========================================= */
+.about-strip {
+  background: var(--espresso);
+  padding: 5rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  overflow: hidden;
+  position: relative;
+}
+.about-strip::before {
+  content: '';
+  position: absolute; right: -80px; top: -80px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,135,42,0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.about-script {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 5vw, 6rem);
+  color: var(--caramel);
+  flex-shrink: 0;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.about-content { max-width: 560px; }
+.about-content p {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  font-weight: 300;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.85);
+  font-style: italic;
+}
+.about-content p strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--wheat);
+}
+
+/* =========================================
+   MENU — CATEGORIES
+========================================= */
+.menu { background: var(--warm-white); }
+.menu-header { text-align: center; margin-bottom: 4rem; }
+.menu-header .section-desc { margin: 0 auto; }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.menu-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem 2rem;
+  border: 1px solid rgba(200,135,42,0.12);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
+}
+.menu-card::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,135,42,0.1), transparent 70%);
+  pointer-events: none;
+  transition: transform 0.5s var(--ease-out);
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(46,26,14,0.1);
+}
+.menu-card:hover::before { transform: scale(1.5); }
+
+.menu-card-icon {
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.08));
+}
+
+.menu-card-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.menu-card-subtitle {
+  font-family: var(--font-script);
+  font-size: 0.9rem;
+  color: var(--caramel);
+  display: block;
+  margin-bottom: 1rem;
+}
+.menu-card-desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--text-mid);
+  margin-bottom: 1.5rem;
+}
+.menu-card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  background: var(--cream-dark);
+  border: 1px solid rgba(200,135,42,0.2);
+  color: var(--espresso-lt);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+}
+
+/* =========================================
+   BESTSELLERS
+========================================= */
+.bestsellers { background: var(--cream); }
+.bestsellers-inner { max-width: 1100px; margin: 0 auto; }
+.bestsellers-top {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3rem; gap: 1rem; flex-wrap: wrap;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.product-card {
+  background: var(--warm-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(200,135,42,0.1);
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s;
+  cursor: default;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(46,26,14,0.1);
+}
+
+.product-thumb {
+  height: 170px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  font-size: 4.2rem;
+  filter: drop-shadow(0 5px 12px rgba(0,0,0,0.1));
+}
+.pt-1 { background: linear-gradient(145deg,#F5E4C8,#E8C990); }
+.pt-2 { background: linear-gradient(145deg,#F2E0D5,#E5C4A8); }
+.pt-3 { background: linear-gradient(145deg,#EDE4F5,#D8C8EA); }
+.pt-4 { background: linear-gradient(145deg,#DFF2E8,#B8E0C8); }
+
+.badge {
+  position: absolute; top: 10px; left: 10px;
+  background: var(--rust);
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+}
+
+.product-info { padding: 1.2rem; }
+.product-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+.product-flavor {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--text-soft);
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+.product-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--rust);
+}
+.product-order-btn {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--espresso);
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+  border: none;
+}
+.product-order-btn:hover { background: var(--caramel); transform: scale(1.1); }
+
+/* =========================================
+   BREAD & ARTISAN SECTION
+========================================= */
+.artisan {
+  background: var(--cream-dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+  min-height: 560px;
+}
+
+.artisan-visual {
+  background: linear-gradient(135deg, #D4A96A 0%, #B8842A 50%, #8C5E15 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem;
+}
+.artisan-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.08), transparent 70%);
+}
+
+.bread-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative; z-index: 2;
+  width: 100%;
+  max-width: 360px;
+}
+.bread-item {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s var(--ease-out), background 0.3s;
+}
+.bread-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.18); }
+.bread-item:first-child { grid-column: span 2; }
+.bread-emoji { font-size: 3rem; margin-bottom: 0.5rem; display: block; }
+.bread-item:first-child .bread-emoji { font-size: 4rem; }
+.bread-name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.artisan-content {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.artisan-content .section-title { margin-bottom: 1rem; }
+.artisan-content .section-desc { margin-bottom: 2rem; }
+
+.artisan-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.artisan-feature {
+  padding: 1rem;
+  background: rgba(200,135,42,0.08);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--caramel);
+}
+.artisan-feature-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--espresso);
+  margin-bottom: 0.2rem;
+}
+.artisan-feature-desc {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+/* =========================================
+   BIRTHDAY SPECIAL
+========================================= */
+.birthday {
+  background: var(--espresso);
+  padding: 7rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.birthday::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(200,135,42,0.18), transparent 60%);
+  pointer-events: none;
+}
+
+.birthday .section-eyebrow-text { color: var(--wheat); }
+.birthday .section-eyebrow-line { background: var(--wheat); }
+
+.birthday .section-title {
+  color: var(--warm-white);
+  max-width: 600px;
+  margin: 0 auto 1.25rem;
+}
+.birthday .section-title em { color: var(--caramel); }
+
+.birthday .section-desc {
+  color: rgba(255,255,255,0.55);
+  margin: 0 auto 3.5rem;
+}
+
+.birthday-perks {
+  display: flex; justify-content: center; gap: 3.5rem;
+  margin-bottom: 3.5rem; flex-wrap: wrap;
+}
+.perk { text-align: center; }
+.perk-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.2));
+}
+.perk-label {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+.btn-caramel {
+  background: var(--caramel);
+  color: var(--espresso);
+  padding: 1rem 2.5rem;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.btn-caramel:hover {
+  background: var(--wheat);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* =========================================
+   TESTIMONIALS
+========================================= */
+.testimonials { background: var(--warm-white); }
+.testimonials-inner { max-width: 1100px; margin: 0 auto; }
+.testimonials-header { text-align: center; margin-bottom: 4rem; }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.review {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid rgba(200,135,42,0.12);
+  position: relative;
+}
+.review::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: 1;
+  position: absolute; top: 0.5rem; left: 1.5rem;
+  color: rgba(200,135,42,0.15);
+  pointer-events: none;
+}
+
+.review-stars {
+  display: flex; gap: 3px;
+  margin-bottom: 1rem;
+}
+.star { color: var(--caramel); font-size: 0.9rem; }
+
+.review-text {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-mid);
+  margin-bottom: 1.5rem;
+  position: relative; z-index: 1;
+}
+
+.reviewer {
+  display: flex; align-items: center; gap: 0.85rem;
+}
+.reviewer-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: white;
+  flex-shrink: 0;
+}
+.av-1 { background: var(--rust); }
+.av-2 { background: var(--caramel); }
+.av-3 { background: var(--espresso-lt); }
+
+.reviewer-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--espresso);
+}
+.reviewer-location {
+  font-size: 0.75rem;
+  color: var(--text-soft);
+}
+
+/* =========================================
+   ORDER / CONTACT
+========================================= */
+.order-section {
+  background: var(--cream-dark);
+  text-align: center;
+  padding: 7rem 3rem;
+}
+.order-inner { max-width: 580px; margin: 0 auto; }
+.order-inner .section-title { margin-bottom: 0.75rem; }
+.order-inner .section-desc { margin: 0 auto 0.75rem; }
+.order-note {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  margin-bottom: 2.5rem;
+  display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+}
+
+.contact-btns {
+  display: flex; justify-content: center; gap: 0.85rem; flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s;
+}
+.contact-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.contact-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+.cb-wa { background: #25D366; color: white; }
+.cb-ig { background: linear-gradient(135deg,#405de6,#5851db,#833ab4,#c13584,#e1306c,#fd1d1d); color: white; }
+.cb-tt { background: #010101; color: white; }
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  background: var(--espresso);
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+}
+.footer-brand em {
+  font-style: italic;
+  color: var(--caramel);
+}
+
+.footer-middle {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: var(--caramel);
+  opacity: 0.7;
+}
+
+.footer-right {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+  text-align: right;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+========================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.75rem 1.5rem; }
+  .nav-links { display: none; }
+
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { min-height: 40vh; }
+  .hero-left { padding: 7rem 1.5rem 3rem; }
+
+  .menu-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr 1fr; }
+  .artisan { grid-template-columns: 1fr; }
+  .artisan-visual { min-height: 300px; }
+  .artisan-content { padding: 3rem 1.5rem; }
+  .reviews-grid { grid-template-columns: 1fr; }
+
+  section { padding: 5rem 1.5rem; }
+  .about-strip { flex-direction: column; gap: 1.5rem; padding: 4rem 1.5rem; }
+  .birthday-perks { gap: 2rem; }
+  footer { flex-direction: column; text-align: center; }
+  .footer-right { text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .artisan-features { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav id="main-nav">
+  <div class="nav-brand">
+    <span class="nav-brand-main">Bakelicious</span>
+    <span class="nav-brand-sub">by Hafsah</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#breads">Artisan Breads</a></li>
+    <li><a href="#birthday">Birthday</a></li>
+    <li><a href="#order" class="nav-order">Order Now</a></li>
+  </ul>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span class="hero-eyebrow-text">Handcrafted in Bandung</span>
+    </div>
+
+    <h1 class="hero-title">
+      Baked with<br>
+      <span class="hero-title-script">Love & Flour</span>
+      <em>Every Day.</em>
+    </h1>
+
+    <p class="hero-desc">
+      Custom cakes, artisan breads & birthday masterpieces — made fresh to order. 
+      Gorgeous to look at, even better to taste.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary">
+        Lihat Menu
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/>
+        </svg>
+      </a>
+      <a href="#order" class="btn-ghost">Order Custom →</a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Happy Customers</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">50+</div>
+        <div class="hero-stat-label">Cake Designs</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4.9★</div>
+        <div class="hero-stat-label">Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-visual-grid">
+      <div class="hero-tile hero-tile-1">
+        <span class="tile-emoji">🎂</span>
+        <span class="tile-label">Birthday Cakes</span>
+      </div>
+      <div class="hero-tile hero-tile-2">
+        <span class="tile-emoji">🍞</span>
+        <span class="tile-label">Artisan Breads</span>
+      </div>
+      <div class="hero-tile hero-tile-3">
+        <span class="tile-emoji">🧁</span>
+        <span class="tile-label">Cupcakes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT STRIP ========== -->
+<div class="about-strip">
+  <div class="about-script">Hafsah's Kitchen</div>
+  <div class="about-content">
+    <p>
+      "Every loaf, every cake, every bite — baked with <strong>premium ingredients</strong>, 
+      a lot of patience, and even more <strong>love</strong>. 
+      Because you deserve something truly <strong>delicious</strong>."
+    </p>
+  </div>
+</div>
+
+<!-- ========== MENU ========== -->
+<section class="menu" id="menu">
+  <div class="menu-header reveal">
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-line"></span>
+      <span class="section-eyebrow-text">Koleksi kami</span>
+    </div>
+    <h2 class="section-title">Our <em>Signature</em><br><span class="script">Collections</span></h2>
+    <p class="section-desc">Semua dibuat to-order, bahan premium pilihan, desain sesuai keinginan kamu.</p>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-card reveal reveal-delay-1">
+      <span class="menu-card-icon">🎂</span>
+      <h3 class="menu-card-title">Birthday Cakes</h3>
+      <span class="menu-card-subtitle">Custom Dream Designs</span>
+      <p class="menu-card-desc">Multi-tier, single tier, fondant atau buttercream — semua bisa! Konsultasi desain gratis, hasil foto-worthy dijamin.</p>
+      <div class="menu-card-tags">
+        <span class="tag">Custom Design</span>
+        <span class="tag">Multi-Tier</span>
+        <span class="tag">Fondant</span>
+        <span class="tag">Buttercream</span>
+      </div>
+    </div>
+
+    <div class="menu-card reveal reveal-delay-2">
+      <span class="menu-card-icon">🍰</span>
+      <h3 class="menu-card-title">Layer Cakes</h3>
+      <span class="menu-card-subtitle">Luscious & Layered</span>
+      <p class="menu-card-desc">Lapisan kue lembut dengan cream filling premium. Cocok untuk gift, gathering, atau self-treat yang mewah.</p>
+      <div class="menu-card-tags">
+        <span class="tag">Red Velvet</span>
+        <span class="tag">Biscoff</span>
+        <span class="tag">Matcha</span>
+        <span class="tag">Ganache</span>
+      </div>
+    </div>
+
+    <div class="menu-card reveal reveal-delay-3">
+      <span class="menu-card-icon">🥐</span>
+      <h3 class="menu-card-title">Pastries & Breads</h3>
+      <span class="menu-card-subtitle">Artisan Baked Daily</span>
+      <p class="menu-card-desc">Croissant, sourdough, pain au chocolat, dan berbagai roti artisan yang dipanggang fresh setiap hari dengan teknik klassik.</p>
+      <div class="menu-card-tags">
+        <span class="tag">Sourdough</span>
+        <span class="tag">Croissant</span>
+        <span class="tag">Danish</span>
+        <span class="tag">Focaccia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BESTSELLERS ========== -->
+<section class="bestsellers" id="bestsellers">
+  <div class="bestsellers-inner">
+    <div class="bestsellers-top reveal">
+      <div>
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-line"></span>
+          <span class="section-eyebrow-text">Paling Dicintai</span>
+        </div>
+        <h2 class="section-title">Fan <em>Favourites</em></h2>
+      </div>
+      <a href="#order" class="btn-ghost">Pesan Sekarang →</a>
+    </div>
+
+    <div class="products-grid">
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-thumb pt-1">
+          <span class="badge">⭐ Bestseller</span>
+          🎂
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Red Velvet Dream</h4>
+          <p class="product-flavor">Cream cheese frosting · Velvety red sponge</p>
+          <div class="product-bottom">
+            <span class="product-price">Rp 320.000</span>
+            <button class="product-order-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})" aria-label="Order">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-thumb pt-2">
+          <span class="badge">🔥 Trending</span>
+          🍰
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Lotus Biscoff</h4>
+          <p class="product-flavor">Biscoff spread · Caramel crunch</p>
+          <div class="product-bottom">
+            <span class="product-price">Rp 280.000</span>
+            <button class="product-order-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})" aria-label="Order">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-3">
+        <div class="product-thumb pt-3">
+          🥐
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Butter Croissant</h4>
+          <p class="product-flavor">French-style · 72-hour lamination</p>
+          <div class="product-bottom">
+            <span class="product-price">Rp 45.000</span>
+            <button class="product-order-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})" aria-label="Order">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-4">
+        <div class="product-thumb pt-4">
+          🍞
+        </div>
+        <div class="product-info">
+          <h4 class="product-name">Sourdough Loaf</h4>
+          <p class="product-flavor">Wild yeast · Crispy crust</p>
+          <div class="product-bottom">
+            <span class="product-price">Rp 95.000</span>
+            <button class="product-order-btn" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})" aria-label="Order">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ARTISAN BREADS ========== -->
+<div class="artisan" id="breads">
+  <div class="artisan-visual">
+    <div class="bread-display">
+      <div class="bread-item">
+        <span class="bread-emoji">🍞</span>
+        <span class="bread-name">Sourdough</span>
+      </div>
+      <div class="bread-item">
+        <span class="bread-emoji">🥐</span>
+        <span class="bread-name">Croissant</span>
+      </div>
+      <div class="bread-item">
+        <span class="bread-emoji">🥖</span>
+        <span class="bread-name">Baguette</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="artisan-content">
+    <div class="section-eyebrow">
+      <span class="section-eyebrow-line"></span>
+      <span class="section-eyebrow-text">Artisan Breads</span>
+    </div>
+    <h2 class="section-title">The Art of <em>Real</em><br><span class="script">Bread Making</span></h2>
+    <p class="section-desc">
+      Roti kami dibuat dengan teknik tradisional — slow fermentation, bahan alami, dan cinta yang tidak bisa disingkat. Rasakan bedanya.
+    </p>
+    <div class="artisan-features">
+      <div class="artisan-feature">
+        <div class="artisan-feature-title">Slow Fermentation</div>
+        <div class="artisan-feature-desc">24–72 jam fermentasi alami untuk rasa yang kompleks</div>
+      </div>
+      <div class="artisan-feature">
+        <div class="artisan-feature-title">No Preservatives</div>
+        <div class="artisan-feature-desc">Bahan alami pilihan, bebas pengawet</div>
+      </div>
+      <div class="artisan-feature">
+        <div class="artisan-feature-title">Baked Fresh Daily</div>
+        <div class="artisan-feature-desc">Dipanggang pagi hari, siap dikirim siang</div>
+      </div>
+      <div class="artisan-feature">
+        <div class="artisan-feature-title">Custom Orders</div>
+        <div class="artisan-feature-desc">Roti custom untuk hampers & events</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== BIRTHDAY ========== -->
+<section class="birthday" id="birthday">
+  <div style="position:relative;z-index:2">
+    <div class="section-eyebrow" style="justify-content:center">
+      <span class="section-eyebrow-line"></span>
+      <span class="section-eyebrow-text">Birthday Special</span>
+      <span class="section-eyebrow-line"></span>
+    </div>
+    <h2 class="section-title">Make Their Day<br><em>Unforgettable</em></h2>
+    <p class="section-desc">Kue ulang tahun dari Bakelicious bukan sekadar kue — ini kenangan yang bisa dimakan.</p>
+
+    <div class="birthday-perks">
+      <div class="perk">
+        <span class="perk-icon">🎨</span>
+        <div class="perk-label">Free Design<br>Consultation</div>
+      </div>
+      <div class="perk">
+        <span class="perk-icon">📸</span>
+        <div class="perk-label">Photo-Ready<br>Presentation</div>
+      </div>
+      <div class="perk">
+        <span class="perk-icon">🚚</span>
+        <div class="perk-label">Bandung Area<br>Delivery</div>
+      </div>
+      <div class="perk">
+        <span class="perk-icon">💝</span>
+        <div class="perk-label">Gift Message<br>Add-On</div>
+      </div>
+      <div class="perk">
+        <span class="perk-icon">🎂</span>
+        <div class="perk-label">Any Flavor<br>Any Design</div>
+      </div>
+    </div>
+
+    <a href="#order" class="btn-caramel">
+      Plan My Birthday Cake
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="2" y1="8" x2="14" y2="8"/><polyline points="9,3 14,8 9,13"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-eyebrow" style="justify-content:center">
+        <span class="section-eyebrow-line"></span>
+        <span class="section-eyebrow-text">Happy Customers</span>
+        <span class="section-eyebrow-line"></span>
+      </div>
+      <h2 class="section-title">What They're <em>Saying</em></h2>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review reveal reveal-delay-1">
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"Kue ulang tahun untuk anak saya persis seperti referensi yang saya kirim. Cantik banget dan rasanya enak sekali! Semua tamu minta nomor kontaknya."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar av-1">SR</div>
+          <div>
+            <div class="reviewer-name">Sarah R.</div>
+            <div class="reviewer-location">Bandung · via Instagram</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review reveal reveal-delay-2">
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"Sourdough-nya luar biasa. Crustnya crispy, dalamnya chewy. Saya sudah coba banyak tempat tapi yang ini beda levelnya. Udah jadi langganan tiap minggu!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar av-2">RH</div>
+          <div>
+            <div class="reviewer-name">Rizal H.</div>
+            <div class="reviewer-location">Cimahi · via TikTok</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review reveal reveal-delay-3">
+        <div class="review-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="review-text">"Hafsah sabar banget melayani request saya yang banyak. Hasilnya? Kue terindah yang pernah saya lihat, dan rasanya sepadan dengan tampilannya!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar av-3">NF</div>
+          <div>
+            <div class="reviewer-name">Nadia F.</div>
+            <div class="reviewer-location">Bandung · via WhatsApp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ORDER ========== -->
+<section class="order-section" id="order">
+  <div class="order-inner">
+    <div class="section-eyebrow" style="justify-content:center">
+      <span class="section-eyebrow-line"></span>
+      <span class="section-eyebrow-text">Get In Touch</span>
+      <span class="section-eyebrow-line"></span>
+    </div>
+    <h2 class="section-title">Ready to <em>Order?</em></h2>
+    <p class="section-desc">DM kami desain impian kamu, dan kami akan wujudkan! Response cepat via WhatsApp.</p>
+    <p class="order-note">
+      <span>📍</span> Melayani Bandung & sekitarnya
+    </p>
+
+    <div class="contact-btns">
+      <a href="https://wa.me/62" target="_blank" class="contact-btn cb-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.instagram.com/bakeliciousbyhafsah" target="_blank" class="contact-btn cb-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@bakeliciousbyhafsah" target="_blank" class="contact-btn cb-tt">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9a8.22 8.22 0 0 0 4.79 1.53V7.1a4.85 4.85 0 0 1-1.02-.41z"/></svg>
+        TikTok
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-brand">Bakelicious <em>by Hafsah</em></div>
+  <div class="footer-middle">Made with ♥</div>
+  <div class="footer-right">
+    bakeliciousbyhafsah.com<br>
+    Bandung, West Java · Indonesia
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+// Nav scroll effect
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// Smooth anchor clicks
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
